@@ -1,6 +1,6 @@
 resource "aws_security_group" "apps" {
   name        = "Main SG for apps"
-  description = "Allow SSH and traffic on port 3000 from anywhere"
+  description = "Allow SSH and traffic on port 3000 and 6379 (Redis) from anywhere"
   vpc_id      = "${var.vpc_id}"
 
   ingress {
@@ -15,6 +15,14 @@ resource "aws_security_group" "apps" {
     description = "Traffic"
     from_port   = 3000
     to_port     = 3000
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "Redis"
+    from_port   = 6379
+    to_port     = 6379
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }

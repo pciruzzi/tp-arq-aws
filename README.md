@@ -106,7 +106,7 @@ terraform apply -auto-approve
 ```
 > **NOTA:** El flag `-auto-approve` involucra que no se pida la aprobación del plan. **Utilizar bajo su propia responsabilidad**.
 
-> **IMPORTANTE:** Cabe destacar que en el archivo `python.tf` se especifica un comando para copiar la IP con la que se creó la instancia de python a un archivo local. Allí mismo también hay un comando que copia dicha IP al archivo `config.js` de la app node.
+> **IMPORTANTE:** Cabe destacar que en el archivo `python.tf` se especifica un comando para copiar la IP con la que se creó la instancia de python a un archivo local. Allí mismo también hay un comando que copia dicha IP al archivo `config.js` de la app node. Además, el archivo `redis.tf` hace lo propio con el DNS del redis.
 
 Una vez que la infraestructura está creada, es importante notar que la misma tiene corriendo el proceso node (Notar que se corre el archivo `node_user_data.sh` al levantar la infraestructura, que es quien se encarga de comenzar dicho proceso) pero no el proceso python. Es importante entonces iniciar el proceso python en el servidor correspondiente:
 ```sh

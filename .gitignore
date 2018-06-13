@@ -14,5 +14,6 @@ terraform.tfvars
 ip
 ips
 elb_dns
+redis_dns
 src.zip
 key.pem

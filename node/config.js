@@ -8,7 +8,7 @@ module.exports = {
   // Options for creating redis client
   redis: {
     host: 'localhost',
-    port: '1234'
+    port: '6379'
   },
 
   datadog: {
