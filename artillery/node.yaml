@@ -1,0 +1,23 @@
+config:
+  environments:
+    node:
+      target: 'http://node-20180620200402571100000003-1918724815.us-east-1.elb.amazonaws.com/remote'
+
+  pool: 50 # All HTTP requests from all virtual users will be sent over the same connections
+
+  phases:
+    # Crear "arrivalRate" usuarios por segundo, durante un intervalo de "duration" segundos
+    - name: Constant
+      duration: 30
+      arrivalRate: 14
+
+    - name: RampUp
+      duration: 30
+      arrivalRate: 12
+      rampTo: 20
+
+scenarios:
+  - name: Root (/)
+    flow:
+      - get:
+          url: '/'

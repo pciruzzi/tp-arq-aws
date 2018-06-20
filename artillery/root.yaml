@@ -1,0 +1,18 @@
+config:
+  environments:
+    node:
+      target: 'http://<elb_dns>/remote'
+
+  pool: 50 # All HTTP requests from all virtual users will be sent over the same connections
+
+  phases:
+    # Crear "arrivalRate" usuarios por segundo, durante un intervalo de "duration" segundos
+    - name: Constant
+      duration: 30
+      arrivalRate: 30
+
+scenarios:
+  - name: Root (/)
+    flow:
+      - get:
+          url: '/'
