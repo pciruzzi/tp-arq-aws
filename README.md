@@ -97,7 +97,7 @@ terraform providers
 Existe el script `start.sh` en la raíz del proyecto para crear la infraestructura y correr los servidores correspondientes.
 ```bash
 # Guardo en el archivo source_location el nombre del bucket de S3 utilizado para guardar el código para deployar
-echo tp-arqui-node-app-src > source_location
+echo tp-arquitecturas > source_location
 ./start.sh
 ```
 
