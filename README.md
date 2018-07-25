@@ -113,3 +113,8 @@ Lo cual chequeará que la app node funciona. A su vez, si se quiere ver que la m
 ```sh
 curl http://<elb_dns_url>/remote
 ```
+
+Finalmente, para verificar que la conexión de la app node con redis funciona, ejecutar:
+```sh
+curl http://<elb_dns_url>/remote/cached
+```

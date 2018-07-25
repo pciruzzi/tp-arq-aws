@@ -24,13 +24,13 @@ variable "private_key_location" {
 }
 
 variable "vpc_id" {
-  default = "vpc-7563400d"
+  default = "vpc-d7cec3ac"
 }
 
 variable "ami_id" {
-  default = "ami-1853ac65"
+  default = "ami-14c5486b"
 }
 
 variable "node_version" {
-  default = "8.11.2"
+  default = "8.11.1"
 }

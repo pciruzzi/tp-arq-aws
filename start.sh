@@ -14,7 +14,8 @@ echo "##### Starting python app #####"
 $DIR/python/start
 
 # The node code that is actually running has a wrong python server URL, so we must zip it again with the
-# correct IP that has been changed when applying the python.tf infrastructure
+# correct IP that has been changed when applying the python.tf infrastructure. The redis.tf do the same
+# with redis DNS.
 echo "##### Zipping node source code #####"
 $DIR/node/zip
 # And we must upload the src.zip file to the S3 bucket (Which name is in the source_location file) by using the aws-cli.
