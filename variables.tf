@@ -34,7 +34,3 @@ variable "ami_id" {
 variable "node_version" {
   default = "8.11.1"
 }
-
-variable "src_location" {
-  default = "https://s3.amazonaws.com/tp-arquitecturas/src.zip"
-}
